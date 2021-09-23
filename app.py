@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import render_template, request
-from datetime import *
+from datetime import datetime
 
 
 app = Flask(__name__)
@@ -52,3 +52,5 @@ def date():
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
+
+# app is working but this is basic functionality
