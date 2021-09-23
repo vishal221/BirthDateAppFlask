@@ -50,9 +50,9 @@ def date():
 
     if totalAgeMonths > 1:
         if totalAgeMonths % 2 == 1 or totalAgeMonths == 2:
-            prime = "PRIME number"
+            prime = "Yes, you are PRIME"
         else:
-            prime = "COMPOSITE number"
+            prime = "No, you are COMPOSITE"
     elif totalAgeMonths > 0:
         prime = "your age is neither prime nor composite"
     else:
