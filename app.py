@@ -46,7 +46,7 @@ def date():
         else:
             ageInMonths = ageInMonths
 
-    totalAgeMonths = ageInMonths + birthMonth
+    totalAgeMonths = (ageInMonths + currentMonth) - birthMonth
 
     if totalAgeMonths > 1:
         if totalAgeMonths % 2 == 1 or totalAgeMonths == 2:
