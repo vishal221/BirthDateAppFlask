@@ -22,19 +22,21 @@ def date():
     currentMonth = int(currentMonth)
     birthMonth = int(birthMonth)
     birthDays = int(birthDays)
+    currentDay = datetime.utcnow().day
+    currentDay = int(currentDay)
 
     if currentMonth == 4 or 6 or 9 or 11:
-        if birthDays > 30:
+        if birthDays + currentDay > 30:
             ageInMonths =+ 1
         else:
             ageInMonths = ageInMonths
     elif currentMonth == 2:
-        if birthDays > 28:
+        if birthDays + currentDay > 28:
             ageInMonths =+ 1
         else:
             ageInMonths = ageInMonths
     elif ((birthYear % 4 == 0) and (birthYear % 100 != 0)) or (birthYear % 400 == 0) and currentMonth == 2:
-        if birthDays > 29:
+        if birthDays + currentDay > 29:
             ageInMonths =+ 1
         else:
             ageInMonths = ageInMonths
@@ -52,7 +54,7 @@ def date():
         prime = "You do not appear to exist"
 
     birthDate = str(birthDays) + '/' + str(birthMonth) + '/' + str(birthYear)
-    
+
     return render_template('convertPrime.html', formData=birthDate, birthDate=totalAgeMonths, prime=prime)
 
 
