@@ -6,7 +6,7 @@ from datetime import datetime
 app = Flask(__name__)
 
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['GET','POST'])
 def index():
     return render_template('index.html')
 
@@ -27,17 +27,17 @@ def date():
 
     if currentMonth == 4 or 6 or 9 or 11:
         if birthDays + currentDay > 30:
-            ageInMonths =+ 1
+            ageInMonths =+ 1 + ageInMonths 
         else:
             ageInMonths = ageInMonths
     elif currentMonth == 2:
         if birthDays + currentDay > 28:
-            ageInMonths =+ 1
+            ageInMonths =+ 1 + ageInMonths
         else:
             ageInMonths = ageInMonths
     elif ((birthYear % 4 == 0) and (birthYear % 100 != 0)) or (birthYear % 400 == 0) and currentMonth == 2:
         if birthDays + currentDay > 29:
-            ageInMonths =+ 1
+            ageInMonths =+ 1 + ageInMonths
         else:
             ageInMonths = ageInMonths
 
