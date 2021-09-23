@@ -5,6 +5,7 @@ from datetime import datetime
 
 app = Flask(__name__)
 
+
 @app.route('/', methods=['POST'])
 def index():
     return render_template('index.html')
@@ -21,6 +22,7 @@ def date():
     currentMonth = int(currentMonth)
     birthMonth = int(birthMonth)
     birthDays = int(birthDays)
+
     if currentMonth == 4 or 6 or 9 or 11:
         if birthDays > 30:
             ageInMonths =+ 1
@@ -36,7 +38,9 @@ def date():
             ageInMonths =+ 1
         else:
             ageInMonths = ageInMonths
+
     totalAgeMonths = ageInMonths + birthMonth
+
     if totalAgeMonths > 1:
         if totalAgeMonths % 2 == 1 or totalAgeMonths == 2:
             prime = "PRIME number"
@@ -46,7 +50,9 @@ def date():
         prime = "your age is neither prime nor composite"
     else:
         prime = "You do not appear to exist"
+
     birthDate = str(birthDays) + '/' + str(birthMonth) + '/' + str(birthYear)
+    
     return render_template('convertPrime.html', formData=birthDate, birthDate=totalAgeMonths, prime=prime)
 
 
