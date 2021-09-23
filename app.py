@@ -30,6 +30,11 @@ def date():
             ageInMonths =+ 1 + ageInMonths 
         else:
             ageInMonths = ageInMonths
+    elif currentMonth == 1 or 3 or 5 or 7 or 8 or 10 or 12:
+        if birthDays + currentDay > 31:
+            ageInMonths =+ 1 + ageInMonths
+        else:
+            ageInMonths = ageInMonths
     elif currentMonth == 2:
         if birthDays + currentDay > 28:
             ageInMonths =+ 1 + ageInMonths
