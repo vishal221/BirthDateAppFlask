@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import render_template, request
-from datetime import *
+from datetime import datetime
 
 
 app = Flask(__name__)
