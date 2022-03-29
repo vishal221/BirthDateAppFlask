@@ -60,7 +60,7 @@ def date():
 
     birthDate = str(birthDays) + '/' + str(birthMonth) + '/' + str(birthYear)
 
-    return render_template('convertPrime.html', formData=birthDate, birthDate=totalAgeMonths, prime=prime)
+    return render_template('ConvertPrime.html', formData=birthDate, birthDate=totalAgeMonths, prime=prime)
 
 
 if __name__ == "__main__":
